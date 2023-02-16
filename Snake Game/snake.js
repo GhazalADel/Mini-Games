@@ -1,5 +1,7 @@
 import {getInputDir} from './input.js'
-export const SNAKE_SPEED=2;
+export const SNAKE_SPEED=5;
+
+let newPieces=0
 
 let snakeBody=[
     {x:10,y:10},
@@ -23,4 +25,15 @@ export function draw(board){
         snakePiece.classList.add('snake')
         board.appendChild(snakePiece)
     })
+}
+export function expandSnake(amount){
+    newPieces+=amount
+}
+export function onSnake(foo){
+    return snakeBody.some(p => {
+        return p.x===foo.x && p.y===foo.y
+    })
+}
+function addPiece(){
+    
 }
