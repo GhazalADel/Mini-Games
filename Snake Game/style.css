@@ -8,7 +8,7 @@ body{
     align-items: center;
 }
 #board{
-    background-color: green;
+    background-color: lightgreen;
     width: 100vmin;
     height: 100vmin;
     display: grid;
