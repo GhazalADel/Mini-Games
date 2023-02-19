@@ -9,6 +9,7 @@ let snakeBody=[
 ]
 
 export function update(){
+    addPiece()
     let inputDirection=getInputDir()
     for(let i=snakeBody.length-2;i>=0;i--){
         snakeBody[i+1]={...snakeBody[i]}
@@ -31,9 +32,12 @@ export function expandSnake(amount){
 }
 export function onSnake(foo){
     return snakeBody.some(p => {
-        return p.x===foo.x && p.y===foo.y
+        return (p.x===foo.x && p.y===foo.y)
     })
 }
 function addPiece(){
-    
+    for (let i = 0; i < newPieces; i++) {
+        snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
+      }
+    newPieces=0;
 }
